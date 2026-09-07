@@ -150,9 +150,15 @@ export const GetWithAggregate4 =async()=>{
         },
         
         {
-                $project:{
-                    _id:0 , book_id:0
+            $project:{
+                _id:0 ,
+                action:1,
+                bookDetails:{
+                    title:1,
+                    author:1,
+                    year:1,
                 }
+            }
         }
         
     ]).toArray();
